@@ -1,4 +1,4 @@
-# JesusMtnez's dotfiles!
+# Ignacio's dotfiles!
 
 This repository contains my personal configurations for my daily programming tools. It contains:
 - git
@@ -6,6 +6,7 @@ This repository contains my personal configurations for my daily programming too
 - Emacs
 
 ---
-**Author:** *Jesús Martínez-Barquero Herrada*
 
-**Last updated:** _24/07/2015_
+**Author:** *Ignacio Navarro Martín* forked from *Jesús Martínez-Barquero Herrada*
+
+**Last updated:** _15/12/2015_
