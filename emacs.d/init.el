@@ -233,6 +233,13 @@
   :config (progn (setq zoom-window-mode-line-color "DarkRed"))
   :bind (("C-x C-z" . zoom-window-zoom)))
 
+(use-package nyan-mode
+  :ensure t
+  :defer t
+  :init (progn (setq-default nyan-wavy-trail t)
+               (nyan-mode)
+               (nyan-start-animation)))
+
 ;; misc package for extra functionality
 (require 'misc)
 
