@@ -19,3 +19,7 @@ custom/plugins/**
 
 # Custom
 .backup
+
+# Sbt
+sbt/plugins/project/
+emacs.d/ensime/

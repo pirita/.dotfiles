@@ -240,6 +240,10 @@
                (nyan-mode)
                (nyan-start-animation)))
 
+(use-package ensime
+  :ensure t
+  :defer t)
+
 ;; misc package for extra functionality
 (require 'misc)
 
@@ -267,8 +271,8 @@
 (put 'downcase-region 'disabled nil)
 
 ;; Font configuration
-(set-face-attribute 'default nil :font "Hack")
-(set-frame-font "Hack 9" nil t)
+;;(set-face-attribute 'default nil :font "Hack")
+;;(set-frame-font "Hack 9" nil t)
 
 ;; Encoding configuration
 (prefer-coding-system 'utf-8)
