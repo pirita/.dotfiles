@@ -1,12 +1,8 @@
 # Ignacio's dotfiles!
 
-This repository contains my personal configurations for my daily programming tools. It contains:
-- git
-- zsh
-- Emacs
+This repository contains my personal configuration: 
+- spacemacs
 
----
+**Author:** *Ignacio Navarro Martín
 
-**Author:** *Ignacio Navarro Martín* forked from *Jesús Martínez-Barquero Herrada*
 
-**Last updated:** _15/12/2015_
