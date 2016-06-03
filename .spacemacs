@@ -30,7 +30,9 @@ values."
      (colors :variables
              colors-enable-rainbow-identifiers t
              colors-enable-nyan-cat-progress-bar (display-graphic-p))
-     scala
+     (scala :variables
+            scala-enable-eldoc t
+            scala-auto-insert-asterisk-in-comments t)
      ;; markdown
      ;; org
      ;; (shell :variables
@@ -86,7 +88,7 @@ values."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'random
+   dotspacemacs-startup-banner '999
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'.
    ;; (default '(recents projects))
