@@ -1,3 +1,3 @@
 #!/bin/bash
 #Create symbolic links
-ln -s .dotfiles/spacemacs.d .spacemacs.d
+ln -s $HOME/.dotfiles/spacemacs.d $HOME/.spacemacs.d
