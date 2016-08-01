@@ -1,5 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export RUBY=$HOME/.gem/ruby/2.3.0/bin
+export PATH=$RUBY:$PATH
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
