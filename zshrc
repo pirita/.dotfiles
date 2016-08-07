@@ -82,6 +82,6 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias sexit="$HOME/.dotfiles/bin/seeyouspacecowboy.rb; sleep 2; exit"
+alias exit="$HOME/.dotfiles/bin/seeyouspacecowboy.rb; sleep 2; exit"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"

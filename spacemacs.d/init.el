@@ -34,6 +34,7 @@ values."
             scala-enable-eldoc t
             scala-auto-insert-asterisk-in-comments t)
      (lua)
+     (spotify)
      ;; markdown
      ;; org
      ;; (shell :variables
