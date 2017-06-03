@@ -78,6 +78,15 @@ sentence-end-double-space nil
   :ensure t
   :config (add-hook 'prog-mode-hook '(lambda () (nlinum-mode t))))
 
+(use-package ensime
+  :ensure t
+  :pin melpa-stable)
+
+(use-package sbt-mode
+  :pin melpa)
+
+(use-package scala-mode
+  :pin melpa)
 ;;;;;;;
 ;; Configuration
 ;;;;;;;
