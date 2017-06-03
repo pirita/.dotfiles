@@ -4,6 +4,14 @@
 ;; You may delete these explanatory comments.
 ;(package-initialize)
 
+(setq
+inhibit-startup-screen t
+create-lockfiles nil
+make-backup-files nil
+use-package-always-ensure t
+sentence-end-double-space nil
+)
+
 ;; MELPA and Marmalade repos for packages.
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -59,16 +67,17 @@
     (add-hook 'minibuffer-setup-hook 'doom-buffer-mode)))
 
 ;;(doom-themes-neotree-config)
-(doom-themes-nlinum-config)  
+(doom-themes-nlinum-config)
 
 (use-package nlinum
   :ensure t
   :config (add-hook 'prog-mode-hook '(lambda () (nlinum-mode t))))
+
 ;;;;;;;
 ;; Configuration
 ;;;;;;;
 
-(setq make-backup-files nil)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
