@@ -46,6 +46,10 @@ sentence-end-double-space nil
 (use-package asciidoc
   :ensure t)
 
+;; Idris mode
+(use-package idris-mode
+  :ensure t)
+
 ;; Rainbow mode
 (use-package rainbow-mode
   :ensure t
