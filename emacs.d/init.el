@@ -4,13 +4,12 @@
 ;; You may delete these explanatory comments.
 ;(package-initialize)
 
-(setq
-inhibit-startup-screen t
-create-lockfiles nil
-make-backup-files nil
-use-package-always-ensure t
-sentence-end-double-space nil
-)
+(setq inhibit-startup-screen t)
+(setq create-lockfiles nil)
+(setq make-backup-files nil)
+(setq use-package-always-ensure t)
+(setq sentence-end-double-space nil)
+(setq ensime-startup-notification nil)
 
 ;; MELPA and Marmalade repos for packages.
 (require 'package)
@@ -84,13 +83,15 @@ sentence-end-double-space nil
 
 (use-package ensime
   :ensure t
-  :pin melpa-stable)
+  :pin melpa)
 
 (use-package sbt-mode
   :pin melpa)
 
 (use-package scala-mode
   :pin melpa)
+
+(add-to-list 'exec-path "/usr/local/bin")
 ;;;;;;;
 ;; Configuration
 ;;;;;;;
