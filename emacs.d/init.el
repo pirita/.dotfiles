@@ -95,6 +95,10 @@ sentence-end-double-space nil
 ;; Configuration
 ;;;;;;;
 
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(toggle-scroll-bar -1)
+(toggle-frame-maximized)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
