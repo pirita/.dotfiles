@@ -34,16 +34,12 @@
 
 ;;;;;;
 ;;Dependencies
-;;;;;;
+;;;;;
 
 ;; Common Lisp
 (use-package cl
   :ensure t
   :defer t)
-
-;; Ascii-doc
-(use-package asciidoc
-  :ensure t)
 
 ;; Idris mode
 (use-package idris-mode
@@ -65,18 +61,6 @@
   :defer t
   :bind ("<f8>" . neotree-toggle))
 
-(use-package doom-themes
-  :ensure t
-  :config
-  (progn
-    (setq doom-one-brighter-comments t)
-    (load-theme 'doom-one t)
-    (add-hook 'find-file-hook 'doom-buffer-mode)
-    (add-hook 'minibuffer-setup-hook 'doom-buffer-mode)))
-
-;;(doom-themes-neotree-config)
-(doom-themes-nlinum-config)
-
 (use-package nlinum
   :ensure t
   :config (add-hook 'prog-mode-hook '(lambda () (nlinum-mode t))))
@@ -92,6 +76,11 @@
   :pin melpa)
 
 (add-to-list 'exec-path "/usr/local/bin")
+
+;;Robot mode
+(load-file "~/.emacs.d/robot-mode.el")
+(add-to-list 'auto-mode-alist '("\\.txt\\'" . robot-mode))
+
 ;;;;;;;
 ;; Configuration
 ;;;;;;;
@@ -108,10 +97,24 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (nlinum doom-themes neotree rainbow-delimiters rainbow-mode asciidoc use-package ascii-art-to-unicode))))
+    (darkokai-theme nlinum doom-themes neotree rainbow-delimiters rainbow-mode asciidoc use-package ascii-art-to-unicode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;(use-package doom-themes
+;  :ensure t
+;  :config
+;  (progn
+;    (setq doom-one-brighter-comments t)
+;    (load-theme 'doom-one t)
+;    (add-hook 'find-file-hook 'doom-buffer-mode)
+;    (add-hook 'minibuffer-setup-hook 'doom-buffer-mode)))
+
+;;(doom-themes-neotree-config)
+;;(doom-themes-nlinum-config)
+
+(load-theme 'darkokai t)
