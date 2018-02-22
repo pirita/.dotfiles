@@ -77,10 +77,6 @@
 
 (add-to-list 'exec-path "/usr/local/bin")
 
-;;Robot mode
-(load-file "~/.emacs.d/robot-mode.el")
-(add-to-list 'auto-mode-alist '("\\.txt\\'" . robot-mode))
-
 ;;;;;;;
 ;; Configuration
 ;;;;;;;
