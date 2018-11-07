@@ -11,6 +11,8 @@
 (setq sentence-end-double-space nil)
 (setq ensime-startup-notification nil)
 
+(add-to-list 'custom-theme-load-path "~/.emacs.d/etc/themes")
+
 ;; MELPA and Marmalade repos for packages.
 (require 'package)
 (setq
@@ -93,7 +95,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (adoc-mode ansible darkokai-theme nlinum doom-themes neotree rainbow-delimiters rainbow-mode asciidoc use-package ascii-art-to-unicode))))
+    (lua-mode adoc-mode ansible darkokai-theme nlinum doom-themes neotree rainbow-delimiters rainbow-mode asciidoc use-package ascii-art-to-unicode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

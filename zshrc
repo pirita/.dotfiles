@@ -83,5 +83,7 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias exit="$HOME/.dotfiles/bin/seeyouspacecowboy.rb; sleep 2; exit"
+alias cat="lolcat"
+alias emacs="/usr/local/Cellar/emacs/25.3/Emacs.app/Contents/MacOS/Emacs"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
