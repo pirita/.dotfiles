@@ -77,6 +77,10 @@
 (use-package scala-mode
   :pin melpa)
 
+(use-package darkokai-theme
+  :ensure t
+  :config (load-theme 'darkokai t))
+
 (add-to-list 'exec-path "/usr/local/bin")
 
 ;;;;;;;
