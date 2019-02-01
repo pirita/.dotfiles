@@ -56,6 +56,13 @@
   :bind (("C-a" . mwim-beginning)
          ("C-e" . mwim-end)))
 
+;; Smooth scrolling
+(setq redisplay-dont-pause t
+      scroll-margin 5
+      scroll-step 1
+      scroll-conservatively 10000
+      scroll-preserve-screen-position 1)
+
 ;; Common Lisp
 (use-package cl
   :defer t)
