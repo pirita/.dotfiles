@@ -49,6 +49,13 @@
 ;;Dependencies
 ;;;;;
 
+(global-set-key (kbd "C-x C-k") 'kill-this-buffer)
+
+;; Mwin
+(use-package mwim
+  :bind (("C-a" . mwim-beginning)
+         ("C-e" . mwim-end)))
+
 ;; Common Lisp
 (use-package cl
   :defer t)
