@@ -4,6 +4,7 @@
 ;; You may delete these explanatory comments.
 ;(package-initialize)
 
+(setq-default tab-width 4)
 (setq inhibit-startup-screen t)
 (setq create-lockfiles nil)
 (setq make-backup-files nil)
@@ -40,35 +41,28 @@
 
 ;; Common Lisp
 (use-package cl
-  :ensure t
   :defer t)
 
 ;; Idris mode
-(use-package idris-mode
-  :ensure t)
+(use-package idris-mode)
 
 ;; Rainbow mode
 (use-package rainbow-mode
-  :ensure t
   :defer t)
 
 ;; Rainbow delimiters mode
 (use-package rainbow-delimiters
-  :ensure t
   :config (progn (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)))
 
 ;; Neo-tree
 (use-package neotree
-  :ensure t
   :defer t
   :bind ("<f8>" . neotree-toggle))
 
 (use-package nlinum
-  :ensure t
   :config (add-hook 'prog-mode-hook '(lambda () (nlinum-mode t))))
 
 (use-package ensime
-  :ensure t
   :pin melpa)
 
 (use-package sbt-mode
@@ -78,7 +72,6 @@
   :pin melpa)
 
 (use-package darkokai-theme
-  :ensure t
   :config (load-theme 'darkokai t))
 
 (add-to-list 'exec-path "/usr/local/bin")
@@ -119,4 +112,3 @@
 ;;(doom-themes-neotree-config)
 ;;(doom-themes-nlinum-config)
 
-(load-theme 'darkokai t)
