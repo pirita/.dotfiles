@@ -118,14 +118,15 @@
     (winum-mode)))
 
 (use-package projectile
-  :demand
+  :demand t
   :bind-keymap ("C-c p" . projectile-command-map)
   :config
   (setq projectile-enable-caching nil
         projectile-indexing-method 'alien
 		projectile-project-root-files '(".git" ".project" "setup.py" "build.sbt" "pom.xml")
         projectile-globally-ignored-file-suffixes '(".elc" ".pyc" ".o" ".class")
-        projectile-globally-ignored-files '(".DS_Store" "Icon")))
+        projectile-globally-ignored-files '(".DS_Store" "Icon"))
+  (projectile-mode t))
 
 (use-package neotree
   :defer t
