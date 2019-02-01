@@ -71,8 +71,8 @@
 (use-package rainbow-delimiters
   :config (progn (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)))
 
-(use-package nlinum
-  :config (add-hook 'prog-mode-hook '(lambda () (nlinum-mode t))))
+(use-package display-line-numbers
+  :hook ((prog-mode text-mode) . display-line-numbers-mode))
 
 (use-package sbt-mode
   :pin melpa)
