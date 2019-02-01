@@ -32,7 +32,7 @@
 (eval-when-compile
   (require 'use-package))
 (require 'bind-key)
-(require 'diminish)
+(use-package diminish)
 
 ;;;;
 ;;UI
@@ -95,33 +95,5 @@
 (toggle-scroll-bar -1)
 (toggle-frame-maximized)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-	("3a3de615f80a0e8706208f0a71bbcc7cc3816988f971b6d237223b6731f91605" default)))
- '(package-selected-packages
-   (quote
-	(lua-mode adoc-mode ansible darkokai-theme nlinum doom-themes neotree rainbow-delimiters rainbow-mode asciidoc use-package ascii-art-to-unicode))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
-;(use-package doom-themes
-;  :ensure t
-;  :config
-;  (progn
-;    (setq doom-one-brighter-comments t)
-;    (load-theme 'doom-one t)
-;    (add-hook 'find-file-hook 'doom-buffer-mode)
-;    (add-hook 'minibuffer-setup-hook 'doom-buffer-mode)))
-
-;;(doom-themes-neotree-config)
-;;(doom-themes-nlinum-config)
-
+(setq custom-file (concat user-emacs-directory "custom.el"))
+(load custom-file 'noerror)
