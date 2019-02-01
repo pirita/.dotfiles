@@ -83,6 +83,9 @@
 
 (add-to-list 'exec-path "/usr/local/bin")
 
+(use-package auto-package-update
+  :config (setq auto-package-update-delete-old-versions t))
+
 ;;;;;;;
 ;; Configuration
 ;;;;;;;
