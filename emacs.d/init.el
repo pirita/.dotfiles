@@ -71,8 +71,7 @@
 (use-package idris-mode)
 
 ;; Rainbow mode
-(use-package rainbow-mode
-  :defer t)
+(use-package rainbow-mode)
 
 ;; Rainbow delimiters mode
 (use-package rainbow-delimiters
@@ -127,6 +126,10 @@
         projectile-globally-ignored-file-suffixes '(".elc" ".pyc" ".o" ".class")
         projectile-globally-ignored-files '(".DS_Store" "Icon"))
   (projectile-mode t))
+
+(use-package which-key
+  :ensure t
+  :init (which-key-mode))
 
 (use-package neotree
   :defer t
