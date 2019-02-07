@@ -80,6 +80,11 @@
 (use-package display-line-numbers
   :hook ((prog-mode text-mode) . display-line-numbers-mode))
 
+;; Helm
+(use-package helm
+  :ensure t
+  :init (helm-mode))
+
 (use-package sbt-mode
   :pin melpa)
 
