@@ -34,6 +34,16 @@
 (require 'bind-key)
 (use-package diminish)
 
+;; Global temp files
+(setq backup-by-copying t
+      backup-directory-alist '(("." . "~/.emacs-saves"))
+      delete-old-versions t
+      kept-new-versions 6
+      kept-old-versions 2
+      version-control t)
+(setq auto-save-file-name-transforms
+      `((".*" "~/.emacs-saves/" t)))
+
 ;;;;
 ;;UI
 ;;;;
@@ -42,7 +52,7 @@
   (progn
 	(setq doom-themes-enable-bold t
 		  doom-themes-enable-italic t)
-	(load-theme 'doom-molokai t)
+	(load-theme 'doom-city-lights t)
 	(doom-themes-org-config)))
 
 ;;;;;;
