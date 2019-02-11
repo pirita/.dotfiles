@@ -12,6 +12,7 @@ gem install lolcat
 #emacs
 brew uninstall emacs
 brew cleanup
+
 #brew doctor
 brew update
 brew upgrade
@@ -24,3 +25,8 @@ ln -s $HOME/.dotfiles/emacs.d $HOME/.emacs.d
 rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
 gem install lolcat
+
+#git
+ln -s $HOME/.dotfiles/git/gitconfig $HOME/.gitconfig
+ln -s $HOME/.dotfiles/git/gitignore $HOME/.gitignore_global
+git config --global core.excludesfile $HOME/.gitignore_global

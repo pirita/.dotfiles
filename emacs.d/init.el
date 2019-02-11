@@ -11,6 +11,8 @@
 (setq use-package-always-ensure t)
 (setq sentence-end-double-space nil)
 (setq ensime-startup-notification nil)
+(global-auto-revert-mode t)
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 
 ;; MELPA and Marmalade repos for packages.
 (require 'package)
@@ -85,7 +87,7 @@
 
 ;; Rainbow delimiters mode
 (use-package rainbow-delimiters
-  :config (progn (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)))
+  :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package display-line-numbers
   :hook ((prog-mode text-mode) . display-line-numbers-mode))
@@ -140,7 +142,11 @@
 		projectile-project-root-files '(".git" ".project" "setup.py" "build.sbt" "pom.xml")
         projectile-globally-ignored-file-suffixes '(".elc" ".pyc" ".o" ".class")
         projectile-globally-ignored-files '(".DS_Store" "Icon"))
+  (add-to-list 'projectile-globally-ignored-files "target/*")
   (projectile-mode t))
+
+(use-package helm-projectile
+  :hook (projectile-mode . helm-projectile-on))
 
 (use-package which-key
   :ensure t

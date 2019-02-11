@@ -1,0 +1,10 @@
+[user]
+	email = 3074688+pirita@users.noreply.github.com
+	name = Ignacio Navarro
+[core]
+	editor = emacs
+	excludesfile = /Users/inavarro/.gitignore_global
+[credential]
+	helper = osxkeychain
+[fetch]
+    prune = true
