@@ -12,6 +12,7 @@
 (setq sentence-end-double-space nil)
 (setq ensime-startup-notification nil)
 (global-auto-revert-mode t)
+(global-unset-key (kbd "M-/"))
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 
 ;; MELPA and Marmalade repos for packages.
@@ -168,7 +169,8 @@
   (projectile-mode t))
 
 (use-package helm-projectile
-  :ensure t
+  :demand
+  :init (setq helm-projectile-fuzzy-match t)
   :hook (projectile-mode . helm-projectile-on))
 
 (use-package which-key
@@ -213,6 +215,56 @@
         neo-auto-indent-point t
         neo-show-hidden-files t
         neo-window-fixed-size nil))
+
+(use-package company
+  :demand
+  :hook (after-init . global-company-mode)
+  :bind (("M-/" . company-complete))
+  :config
+  (progn
+    (setq company-idle-delay 0.1
+          company-minimum-prefix-length 1
+          company-dabbrev-downcase nil
+          company-dabbrev-ignore-case t)))
+;;;;;
+;;; Scala metals
+;;;;;
+
+;; Add melpa to your packages repositories
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+
+;; Enable defer and ensure by default for use-package
+(setq use-package-always-defer t
+      use-package-always-ensure t)
+
+;; Enable scala-mode and sbt-mode
+(use-package scala-mode
+  :mode "\\.s\\(cala\\|bt\\)$")
+
+(use-package sbt-mode
+  :commands sbt-start sbt-command
+  :config
+  ;; WORKAROUND: https://github.com/ensime/emacs-sbt-mode/issues/31
+  ;; allows using SPACE when in the minibuffer
+  (substitute-key-definition
+   'minibuffer-complete-word
+   'self-insert-command
+   minibuffer-local-completion-map))
+
+;; Enable nice rendering of diagnostics like compile errors.
+;(use-package flycheck
+;  :init (global-flycheck-mode))
+
+(use-package lsp-mode)
+
+(use-package lsp-ui
+  :hook (lsp-mode . lsp-ui-mode))
+
+(use-package lsp-scala
+  :after scala-mode
+  :demand t
+  ;; Optional - enable lsp-scala automatically in scala files
+  :hook (scala-mode . lsp))
 
 ;;;;;;;
 ;; Configuration

@@ -14,6 +14,7 @@ emacs.d/eshell
 emacs.d/localrc.el
 emacs.d/.last-package-update-day
 emacs.d/custom.el
+emacs.d/.lsp-session-v1
 
 # ZSH
 custom/plugins/**
@@ -24,3 +25,7 @@ custom/plugins/**
 # Sbt
 sbt/plugins/project/
 emacs.d/ensime/
+
+# Metals
+.metals/
+.bloop/
