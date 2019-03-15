@@ -234,18 +234,13 @@
 ;;; Scala metals
 ;;;;;
 
-;; Add melpa to your packages repositories
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-
-;; Enable defer and ensure by default for use-package
-(setq use-package-always-defer t
-      use-package-always-ensure t)
-
 ;; Enable scala-mode and sbt-mode
 (use-package scala-mode
-  :mode "\\.s\\(cala\\|bt\\)$")
+  :mode "\\.s\\(cala\\|bt\\)$"
+  :defer t)
 
 (use-package sbt-mode
+  :defer t
   :commands sbt-start sbt-command
   :config
   ;; WORKAROUND: https://github.com/ensime/emacs-sbt-mode/issues/31
@@ -259,9 +254,11 @@
 ;(use-package flycheck
 ;  :init (global-flycheck-mode))
 
-(use-package lsp-mode)
+(use-package lsp-mode
+  :defer t) 
 
 (use-package lsp-ui
+  :defer t
   :hook (lsp-mode . lsp-ui-mode))
 
 (use-package lsp-scala
