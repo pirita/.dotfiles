@@ -15,6 +15,10 @@
 (global-unset-key (kbd "M-/"))
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 
+; Mac emacs
+(setq mac-option-key-is-meta t)
+(setq mac-right-option-modifier nil)
+
 ;; MELPA and Marmalade repos for packages.
 (require 'package)
 (setq
