@@ -125,12 +125,6 @@
                  (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
                  (define-key helm-map (kbd "C-z") 'helm-select-action)))  ; list actions using C-z
 
-(use-package sbt-mode
-  :pin melpa)
-
-(use-package scala-mode
-  :pin melpa)
-
 (use-package all-the-icons)
 
 (add-to-list 'exec-path "/usr/local/bin")
@@ -167,6 +161,7 @@
   :config
   (setq projectile-enable-caching nil
         projectile-indexing-method 'alien
+		projectile-completion-system 'helm
 		projectile-project-root-files '(".git" ".project" "setup.py" "build.sbt" "pom.xml")
         projectile-globally-ignored-file-suffixes '(".elc" ".pyc" ".o" ".class")
         projectile-globally-ignored-files '(".DS_Store" "Icon"))
