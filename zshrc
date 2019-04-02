@@ -88,3 +88,5 @@ alias cat="lolcat"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+export PATH=/Users/inavarro/.local/bin:$PATH
