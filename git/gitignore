@@ -21,6 +21,7 @@ custom/plugins/**
 
 # Custom
 .backup
+.history
 
 # Sbt
 sbt/plugins/project/
