@@ -254,7 +254,11 @@
 
 (use-package lsp-ui
   :defer t
-  :hook (lsp-mode . lsp-ui-mode))
+  :custom
+  (lsp-ui-doc-enable t)
+  (lsp-ui-doc-include-signture t)
+  (lsp-ui-doc-position 'at-point)
+  (lsp-ui-sideline-enable nil))
 
 (use-package lsp-scala
   :after scala-mode
@@ -262,10 +266,18 @@
   ;; Optional - enable lsp-scala automatically in scala files
   :hook (scala-mode . lsp))
 
+(use-package company-lsp
+  :defer t
+  :after company-mode
+  :custom
+  (company-lsp-cache-candidates nil)
+  (company-lsp-async t)
+  (company-lsp-enable-recompletion t))
+
 ;;;;;;;
 ;; Configuration
 ;;;;;;;
-
+  
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (toggle-scroll-bar -1)

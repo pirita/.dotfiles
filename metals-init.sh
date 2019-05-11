@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 #
-# Generates metals-emacs binary in `$HOME/jmartinez/.local/bin`
+# Generates metals-emacs binary in `/usr/local/bin`
 
 coursier=/tmp/coursier
-metalsV="0.4.4"
+metalsV="0.5.2"
 
 # Get coursier latest version
 curl -L -o $coursier https://git.io/coursier
