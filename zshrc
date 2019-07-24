@@ -86,7 +86,7 @@ alias exit="$HOME/.dotfiles/bin/seeyouspacecowboy.rb; sleep 2; exit"
 alias cat="lolcat"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH=/Users/inavarro/.dotfiles/bin:$PATH
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 export PATH=/Users/inavarro/.local/bin:$PATH

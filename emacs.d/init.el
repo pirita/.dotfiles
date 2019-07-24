@@ -71,6 +71,9 @@
 ;; Yaml
 (use-package yaml-mode)
 
+;; Haskell
+(use-package haskell-mode)
+
 ;; Mwin
 (use-package mwim
   :bind (("C-a" . mwim-beginning)

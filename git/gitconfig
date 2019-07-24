@@ -8,3 +8,4 @@
 	helper = osxkeychain
 [fetch]
     prune = true
+
