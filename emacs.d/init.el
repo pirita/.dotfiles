@@ -59,7 +59,7 @@
   (progn
 	(setq doom-themes-enable-bold t
 		  doom-themes-enable-italic t)
-	(load-theme 'doom-city-lights t)
+	(load-theme 'doom-spacegrey t)
 	(doom-themes-org-config)))
 
 ;;;;;;
@@ -67,6 +67,11 @@
 ;;;;;
 
 (global-set-key (kbd "C-x C-k") 'kill-this-buffer)
+
+;; Flymd
+(use-package pandoc-mode
+  :config (add-hook 'markdown-mode-hook 'pandoc-mode)
+  )
 
 ;; Yaml
 (use-package yaml-mode)
@@ -253,7 +258,9 @@
 ;  :init (global-flycheck-mode))
 
 (use-package lsp-mode
-  :defer t) 
+  :defer t
+  :custom
+  (lsp-enable-snippet nil)) 
 
 (use-package lsp-ui
   :defer t
