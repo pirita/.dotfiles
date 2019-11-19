@@ -14,6 +14,7 @@
 (global-auto-revert-mode t)
 (global-unset-key (kbd "M-/"))
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(global-set-key (kbd "C-c ag") 'helm-projectile-ag)
 
 ; Mac emacs
 (setq mac-option-key-is-meta t)
