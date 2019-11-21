@@ -14,7 +14,6 @@
 (global-auto-revert-mode t)
 (global-unset-key (kbd "M-/"))
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
-(global-set-key (kbd "C-c ag") 'helm-projectile-ag)
 
 ; Mac emacs
 (setq mac-option-key-is-meta t)
@@ -179,7 +178,10 @@
 (use-package helm-projectile
   :demand
   :init (setq helm-projectile-fuzzy-match t)
-  :hook (projectile-mode . helm-projectile-on))
+  :custom
+  (helm-projectile-fuzzy-match t)
+  :config
+  (helm-projectile-on))
 
 (use-package which-key
   :ensure t
