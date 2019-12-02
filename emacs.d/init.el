@@ -101,6 +101,10 @@
 ;; Rainbow mode
 (use-package rainbow-mode)
 
+;; Weather
+(use-package wttrin)
+(setq wttrin-default-cities '("Murcia" "Madrid" "Leganes" "Tokyo" "London"))
+
 ;; Rainbow delimiters mode
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
@@ -132,6 +136,7 @@
                  (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
                  (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
                  (define-key helm-map (kbd "C-z") 'helm-select-action)))  ; list actions using C-z
+(use-package helm-ag)
 
 (use-package all-the-icons)
 
@@ -227,15 +232,30 @@
         neo-window-fixed-size nil))
 
 (use-package company
-  :demand
+  :diminish
   :hook (after-init . global-company-mode)
-  :bind (("M-/" . company-complete))
+  :functions (my-company-yasnippet)
+  :bind (("M-/" . company-complete)
+         ("<backtab>" . company-yasnippet)
+         :map company-active-map
+         ("C-p" . company-select-previous)
+         ("C-n" . company-select-next)
+         ("<tab>" . company-complete-common-or-cycle)
+         ("<backtab>" . my-company-yasnippet))
+  :custom
+  (company-idle-delay 0)
+  (company-echo-delay 0)
+  (company-minimum-prefix-length 0)
+  (company-tooltip-limit 12)
+  (company-tooltip-align-annotations t)
+  (company-show-numbers t)
+  (company-dabbrev-downcase nil)
+  (company-dabbrev-ignore-case t)
   :config
-  (progn
-    (setq company-idle-delay 0.1
-          company-minimum-prefix-length 1
-          company-dabbrev-downcase nil
-          company-dabbrev-ignore-case t)))
+  (defun my-company-yasnippet ()
+    (interactive)
+    (company-abort)
+    (call-interactively 'company-yasnippet)))
 ;;;;;
 ;;; Scala metals
 ;;;;;
