@@ -227,7 +227,7 @@
                 (neotree-dir project-dir)
                 (neotree-find file-name))))))
 
-  (setq neo-theme 'nerd
+  (setq neo-theme (if (display-graphic-p) 'icons 'nerd)
         neo-window-width 40
         neo-create-file-auto-open t
         neo-show-updir-line nil
