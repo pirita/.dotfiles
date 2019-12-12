@@ -27,8 +27,8 @@
                     ("melpa" . "http://melpa.org/packages/")
                     ("melpa-stable" . "http://stable.melpa.org/packages/"))
  package-archive-priorities '(("melpa-stable" . 0)
-							  ("melpa" . 20)
-							  ("gnu" . 10)))
+                              ("melpa" . 20)
+                              ("gnu" . 10)))
 (package-initialize)
 
 ;; Bootstrap 'use-package
@@ -57,10 +57,18 @@
 (use-package doom-themes
   :config
   (progn
-	(setq doom-themes-enable-bold t
-		  doom-themes-enable-italic t)
-	(load-theme 'doom-spacegrey t)
-	(doom-themes-org-config)))
+  (setq doom-themes-enable-bold t
+      doom-themes-enable-italic t)
+  (load-theme 'doom-spacegrey t)
+  (doom-themes-org-config)))
+
+(use-package doom-modeline
+  :hook
+  (after-init . doom-modeline-mode)
+  :custom
+  (doom-modeline-buffer-file-name-style 'relative-to-project)
+  (doom-modeline-height 20)
+  (doom-modeline-major-mode-color-icon t))
 
 ;;;;;;
 ;;Dependencies
@@ -174,8 +182,8 @@
   :config
   (setq projectile-enable-caching nil
         projectile-indexing-method 'alien
-		projectile-completion-system 'helm
-		projectile-project-root-files '(".git" ".project" "setup.py" "build.sbt" "pom.xml")
+    projectile-completion-system 'helm
+    projectile-project-root-files '(".git" ".project" "setup.py" "build.sbt" "pom.xml")
         projectile-globally-ignored-file-suffixes '(".elc" ".pyc" ".o" ".class")
         projectile-globally-ignored-files '(".DS_Store" "Icon"))
   (projectile-mode t))
@@ -283,7 +291,7 @@
 (use-package lsp-mode
   :defer t
   :custom
-  (lsp-enable-snippet nil)) 
+  (lsp-enable-snippet nil))
 
 (use-package lsp-ui
   :defer t
@@ -310,7 +318,7 @@
 ;;;;;;;
 ;; Configuration
 ;;;;;;;
-  
+
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (toggle-scroll-bar -1)
