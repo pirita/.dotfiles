@@ -57,10 +57,18 @@
 (use-package doom-themes
   :config
   (progn
-	(setq doom-themes-enable-bold t
-		  doom-themes-enable-italic t)
-	(load-theme 'doom-spacegrey t)
-	(doom-themes-org-config)))
+  (setq doom-themes-enable-bold t
+      doom-themes-enable-italic t)
+  (load-theme 'doom-spacegrey t)
+  (doom-themes-org-config)))
+
+(use-package doom-modeline
+  :hook
+  (after-init . doom-modeline-mode)
+  :custom
+  (doom-modeline-buffer-file-name-style 'relative-to-project)
+  (doom-modeline-height 20)
+  (doom-modeline-major-mode-color-icon t))
 
 ;;;;;;
 ;;Dependencies
