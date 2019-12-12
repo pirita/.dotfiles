@@ -1,7 +1,9 @@
 # Ignacio's dotfiles!
 
 This repository contains my personal configuration: 
-- spacemacs
+- Emacs
+- zsh
+- git
 
 **Author:** *Ignacio Navarro Martín
 
