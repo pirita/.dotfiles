@@ -22,10 +22,9 @@
 ;; MELPA and Marmalade repos for packages.
 (require 'package)
 (setq
- package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                    ("org" . "http://orgmode.org/elpa/")
-                    ("melpa" . "http://melpa.org/packages/")
-                    ("melpa-stable" . "http://stable.melpa.org/packages/"))
+ package-archives '(("gnu"          . "https://elpa.gnu.org/packages/")
+                    ("melpa"        . "https://melpa.org/packages/")
+                    ("melpa-stable" . "https://stable.melpa.org/packages/"))
  package-archive-priorities '(("melpa-stable" . 0)
 							  ("melpa" . 20)
 							  ("gnu" . 10)))
