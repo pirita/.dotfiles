@@ -109,8 +109,9 @@
 (use-package rainbow-mode)
 
 ;; Weather
-(use-package wttrin)
-(setq wttrin-default-cities '("Murcia" "Madrid" "Leganes" "Tokyo" "London"))
+(use-package wttrin
+  :custom
+  (wttrin-default-cities '("Murcia" "Madrid" "Leganes" "Tokyo" "London")))
 
 ;; Rainbow delimiters mode
 (use-package rainbow-delimiters
