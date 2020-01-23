@@ -179,6 +179,8 @@
 (use-package projectile
   :demand
   :bind-keymap ("C-c p" . projectile-command-map)
+  :bind (:map projectile-command-map
+              ("a" . projectile-add-known-project))
   :config
   (setq projectile-enable-caching nil
         projectile-indexing-method 'alien
