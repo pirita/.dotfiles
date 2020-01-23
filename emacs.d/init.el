@@ -307,6 +307,13 @@
   ;; Optional - enable lsp-scala automatically in scala files
   :hook (scala-mode . lsp))
 
+(use-package lsp-haskell
+  :after haskell-mode
+  :custom
+  ;; (lsp-log-io t)
+  (lsp-haskell-process-path-hie "ghcide")
+  (lsp-haskell-process-args-hie '()))
+
 (use-package company-lsp
   :defer t
   :after company-mode
