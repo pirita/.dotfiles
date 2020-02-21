@@ -293,7 +293,9 @@
 (use-package lsp-mode
   :defer t
   :custom
-  (lsp-enable-snippet nil))
+  (lsp-diagnostic-package :none)
+  (lsp-enable-snippet nil)
+  (lsp-prefer-flymake nil))
 
 (use-package lsp-ui
   :defer t
@@ -311,10 +313,12 @@
 
 (use-package lsp-haskell
   :after haskell-mode
+  :demand t
   :custom
   ;; (lsp-log-io t)
-  (lsp-haskell-process-path-hie "ghcide")
-  (lsp-haskell-process-args-hie '()))
+  (lsp-haskell-process-path-hie "/Users/inavarro/.local/bin/ghcide")
+  (lsp-haskell-process-args-hie '())
+  :hook (haskell-mode . lsp))
 
 (use-package company-lsp
   :defer t
