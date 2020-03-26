@@ -19,6 +19,8 @@
 (setq mac-option-key-is-meta t)
 (setq mac-right-option-modifier nil)
 
+(provide 'module-misc)
+
 ;; MELPA and Marmalade repos for packages.
 (require 'package)
 (setq
