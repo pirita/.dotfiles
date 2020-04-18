@@ -315,7 +315,6 @@
   (lsp-signature-render-documentation t)
   (lsp-enable-text-document-color t))
 
-
 (use-package lsp-ui
   :defer t
   :custom
