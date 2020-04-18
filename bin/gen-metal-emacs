@@ -13,7 +13,7 @@ echo "Metals Version: $metalsVersion"
 echo "Metals Location: $metalsLocation"
 
 # Get coursier latest version
-curl -sL -o $coursier https://git.io/coursier
+curl -sL -o $coursier https://git.io/coursier-cli-macos
 chmod +x $coursier
 
 # Clean old metals

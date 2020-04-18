@@ -275,7 +275,9 @@
 ;; Enable scala-mode and sbt-mode
 (use-package scala-mode
   :mode "\\.s\\(cala\\|bt\\)$"
-  :defer t)
+  :defer t
+  :config
+  (setq lsp-metals-server-command "~/.local/bin/metals-emacs"))
 
 (use-package sbt-mode
   :defer t
@@ -294,6 +296,7 @@
 
 (use-package lsp-mode
   :defer t
+  :hook (scala-mode . lsp)
   :custom
   (lsp-diagnostic-package :none)
   (lsp-enable-snippet nil)
@@ -306,12 +309,6 @@
   (lsp-ui-doc-include-signture t)
   (lsp-ui-doc-position 'at-point)
   (lsp-ui-sideline-enable nil))
-
-(use-package lsp-scala
-  :after scala-mode
-  :demand t
-  ;; Optional - enable lsp-scala automatically in scala files
-  :hook (scala-mode . lsp))
 
 (use-package lsp-haskell
   :after haskell-mode
