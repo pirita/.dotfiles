@@ -30,3 +30,4 @@ emacs.d/ensime/
 # Metals
 .metals/
 .bloop/
+metals.sbt
