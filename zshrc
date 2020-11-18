@@ -90,3 +90,6 @@ export PATH=/Users/inavarro/.dotfiles/bin:$PATH
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 export PATH=/Users/inavarro/.local/bin:$PATH
+
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
