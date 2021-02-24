@@ -101,8 +101,7 @@
       scroll-preserve-screen-position 1)
 
 ;; Common Lisp
-(use-package cl
-  :defer t)
+(use-package cl-lib)
 
 ;; Idris mode
 (use-package idris-mode)
