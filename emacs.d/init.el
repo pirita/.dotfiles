@@ -77,11 +77,6 @@
 
 (global-set-key (kbd "C-x C-k") 'kill-this-buffer)
 
-;; Flymd
-(use-package pandoc-mode
-  :config (add-hook 'markdown-mode-hook 'pandoc-mode)
-  )
-
 ;; Yaml
 (use-package yaml-mode)
 
@@ -145,7 +140,7 @@
                  (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
                  (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
                  (define-key helm-map (kbd "C-z") 'helm-select-action)))  ; list actions using C-z
-(use-package helm-ag)
+(package-vc-install '(helm-ag :url "https://github.com/emacsattic/helm-ag"))
 
 (use-package all-the-icons)
 
