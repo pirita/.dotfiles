@@ -121,10 +121,10 @@
   :bind (("C-c h"   . helm-command-prefix)
          ("C-x C-f" . helm-find-files)
          ("C-x b"   . helm-buffers-list)
-         ("M-x"     . helm-M-x)
-         ("M-y"     . helm-show-kill-ring))
-  :config (progn (require 'helm-config)
-                 (setq helm-split-window-in-side-p t
+         ("M-x"     . helm-M-x))
+  ;       ("M-y"     . helm-show-kill-ring))
+
+  :config (progn (setq helm-split-window-in-side-p t
                        helm-move-to-line-cycle-in-source t ; Circle when using helm-next/previous-line
                        helm-ff-search-library-in-sexp t
                        helm-scroll-amount 8
@@ -140,7 +140,6 @@
                  (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
                  (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
                  (define-key helm-map (kbd "C-z") 'helm-select-action)))  ; list actions using C-z
-(package-vc-install '(helm-ag :url "https://github.com/emacsattic/helm-ag"))
 
 (use-package all-the-icons)
 
@@ -291,7 +290,7 @@
 (use-package lsp-mode
   :defer t
   :hook ((lsp-mode . lsp-enable-which-key-integration)
-         ((scala-mode haskell-mode) . lsp))
+         ((scala-mode haskell-mode rustic-mode) . lsp))
   :custom
   (lsp-auto-guess-root t)
   (lsp-keep-workspace-alive nil)
@@ -307,7 +306,15 @@
   (lsp-diagnostic-package :flymake)
   (lsp-signature-auto-activate t)
   (lsp-signature-render-documentation t)
-  (lsp-enable-text-document-color t))
+  (lsp-enable-text-document-color t)
+  (lsp-rust-analyzer-cargo-watch-command "clippy")
+  (lsp-rust-analyzer-display-lifetime-elision-hints-enable "skip_trivial")
+  (lsp-rust-analyzer-display-chaining-hints t)
+  (lsp-rust-analyzer-display-lifetime-elision-hints-use-parameter-names nil)
+  (lsp-rust-analyzer-display-closure-return-type-hints t)
+  (lsp-rust-analyzer-display-parameter-hints nil)
+  (lsp-rust-analyzer-display-reborrow-hints nil)
+  )
 
 (use-package lsp-ui
   :defer t
@@ -325,13 +332,30 @@
   (lsp-haskell-process-path-hie "/Users/inavarro/.local/bin/ghcide")
   (lsp-haskell-process-args-hie '()))
 
-(use-package company-lsp
-  :defer t
-  :after company-mode
-  :custom
-  (company-lsp-cache-candidates nil)
-  (company-lsp-async t)
-  (company-lsp-enable-recompletion t))
+;;;;;;
+;;Rust
+;;;;;;
+
+(use-package rustic
+  :ensure
+  :bind (:map rustic-mode-map
+              ("M-j" . lsp-ui-imenu)
+              ("M-?" . lsp-find-references)
+              ("C-c C-c l" . flycheck-list-errors)
+              ("C-c C-c a" . lsp-execute-code-action)
+              ("C-c C-c r" . lsp-rename)
+              ("C-c C-c q" . lsp-workspace-restart)
+              ("C-c C-c Q" . lsp-workspace-shutdown)
+              ("C-c C-c s" . lsp-rust-analyzer-status))
+  :config
+  ;; uncomment for less flashiness
+  ;; (setq lsp-eldoc-hook nil)
+  ;; (setq lsp-enable-symbol-highlighting nil)
+  ;; (setq lsp-signature-auto-activate nil)
+
+  ;; comment to disable rustfmt on save
+  (setq rustic-format-on-save t))
+
 
 ;;;;;;;
 ;; Configuration
@@ -344,3 +368,15 @@
 
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (load custom-file 'noerror)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-vc-selected-packages '((helm-ag :url "https://github.com/emacsattic/helm-ag"))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
